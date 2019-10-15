@@ -1,0 +1,8 @@
+#regBtn {
+    color: rgb(50, 151, 155);
+}
+
+#regBtn:hover {
+    text-decoration: underline;
+    color: red;
+}

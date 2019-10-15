@@ -1,0 +1,29 @@
+.carousel {
+    text-align: center;
+}
+
+.logo {
+    max-width: 2em;
+    max-height: 2em;
+    margin-right: 0.3%;
+}
+
+a:link {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgba(252, 10, 10, 0.596);
+  }
+  
+  /* selected link */
+  a:active {
+    color: rgba(0, 0, 0, 0.5);
+}
+
