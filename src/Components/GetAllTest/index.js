@@ -85,8 +85,8 @@ class GetAllTest extends Component {
     takeTest = async (testID, student) => {
         const classCode = queryString.parse(this.props.location.search).q
         const takenTests = await getTakenTest(testID)
-        if (takenTests.test.length === 0) {
-            if (takenTests.test.filter(item => item.studentEmail === student))
+            if (takenTests.test.filter(item => item.studentEmail === student).length === 0)
+            {
                 this.props.history.push(`/class/taketest?q=${testID}&&c=${classCode}`)
         } else {
 
@@ -174,7 +174,7 @@ class GetAllTest extends Component {
                                                     className="float-left"
                                                     color="primary"
                                                     style={{ marginRight: 5, borderRadius: 50 }}
-                                                    onClick={() => this.takeTest(item._id, this.props.authenUser.userName)}
+                                                    onClick={() => this.takeTest(item._id, this.props.authenUser.userEmail)}
                                                 >Take Exam
                                     </Button></>}
 
