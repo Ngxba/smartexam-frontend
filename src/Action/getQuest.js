@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getQuiz = async () => {
-  const res = await axios.get(`http://localhost:5000/question`);
+  const res = await axios.get(`https://smart-exam-25-back.herokuapp.com/question`);
   if (res.status === 200) {
     return res.data;
   } else {
@@ -10,7 +10,7 @@ export const getQuiz = async () => {
 };
 
 export const getRandomQuiz = async number => {
-  const res = await axios.get(`http://localhost:5000/question`);
+  const res = await axios.get(`https://smart-exam-25-back.herokuapp.com/question`);
   if (res.status === 200) {
     let chooseArr = [];
     let chooseQuestion = []
@@ -30,7 +30,7 @@ export const getRandomQuiz = async number => {
 };
 
 export const getListQuest = async (listOfQuizQuest, listOfEssayQuest) => {
-  const res = await axios.post(`http://localhost:5000/question/getlistquest`, {
+  const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/question/getlistquest`, {
     listOfQuizQuest, listOfEssayQuest});
   if (res.status === 200) {
     return res.data;

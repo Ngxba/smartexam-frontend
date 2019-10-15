@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const createTest = async (classCode, title, description, listOfQuizQuest, listOfEssayQuest ,authedUser) => {
-    const res = await axios.post(`http://localhost:5000/class/createTest`, {
+    const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/class/createTest`, {
         classCode, title, description, listOfQuizQuest, listOfEssayQuest, authedUser
     });
     if(res.status === 200) {
@@ -12,7 +12,7 @@ export const createTest = async (classCode, title, description, listOfQuizQuest,
 }
 
 export const getTest = async (classCode) => {
-    const res = await axios.get(`http://localhost:5000/class/getTest?q=${classCode}`)
+    const res = await axios.get(`https://smart-exam-25-back.herokuapp.com/class/getTest?q=${classCode}`)
     if(res.status === 200) {
         return res.data
     } else {
@@ -21,7 +21,7 @@ export const getTest = async (classCode) => {
 }
 
 export const deleteTest = async (testID) => {
-    const res = await axios.post(`http://localhost:5000/class/deleteTest`, {
+    const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/class/deleteTest`, {
         testID})
     if(res.status === 200) {
         return res.data
@@ -31,7 +31,7 @@ export const deleteTest = async (testID) => {
 }
 
 export const addTakenTest = async (testID, studentEmail, studentName, quizScore, essayScore, quest) => {
-    const res = await axios.post(`http://localhost:5000/class/addTakenTest`, {
+    const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/class/addTakenTest`, {
         testID, studentEmail, studentName, quizScore, essayScore, quest})
     if(res.status === 200) {
         return res.data
@@ -41,7 +41,7 @@ export const addTakenTest = async (testID, studentEmail, studentName, quizScore,
 }
 
 export const getTakenTest = async (testID) => {
-    const res = await axios.post(`http://localhost:5000/class/getTakenTest`, {
+    const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/class/getTakenTest`, {
         testID})
     if(res.status === 200) {
         return res.data
@@ -51,7 +51,7 @@ export const getTakenTest = async (testID) => {
 }
 
 export const markTakenTest = async (takenTestID, quizScore, essayScore, quest) => {
-    const res = await axios.post(`http://localhost:5000/class/markTakenTest`, {
+    const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/class/markTakenTest`, {
         takenTestID, quizScore, essayScore, quest})
     if(res.status === 200) {
         return res.data
@@ -61,7 +61,7 @@ export const markTakenTest = async (takenTestID, quizScore, essayScore, quest) =
 }
 
 export const getClass = async (classCode) => {
-    const res = await axios.post(`http://localhost:5000/class?q=${classCode}`)
+    const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/class?q=${classCode}`)
     if(res.status === 200) {
         return res.data
     } else {
@@ -70,7 +70,7 @@ export const getClass = async (classCode) => {
 }
 
 export const getOwnedClass = async (roll, userEmail) => {
-    const res = await axios.post(`http://localhost:5000/class/getownedclasses?q=${userEmail}`, {roll})
+    const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/class/getownedclasses?q=${userEmail}`, {roll})
     
     if(res.status === 200) {
         return res.data
@@ -82,7 +82,7 @@ export const getOwnedClass = async (roll, userEmail) => {
 export const createNewClass = async (classCode, listOfGivenStudent, teacher) => {
     const listOfStudent = []
     listOfGivenStudent.map(student => listOfStudent.push(student.value))
-    const res = await axios.post(`http://localhost:5000/class/createnewclass`, {
+    const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/class/createnewclass`, {
         classCode, listOfStudent, teacher
     });
     if(res.status === 200) {
@@ -93,7 +93,7 @@ export const createNewClass = async (classCode, listOfGivenStudent, teacher) => 
 }
 
 export const addUserIntoClass = async (classCode, userEmail, roll) => {
-    const res = await axios.post(`http://localhost:5000/class/adduser`,{
+    const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/class/adduser`,{
         classCode, userEmail, roll
     })
     if(res.status === 200) {

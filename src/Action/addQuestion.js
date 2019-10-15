@@ -7,7 +7,7 @@ export const addQuiz = async (
   Answers,
   rightAnswer
 ) => {
-  const res = await axios.post(`http://localhost:5000/question`, {
+  const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/question`, {
     type,
     model,
     QuizQuestionContent,
@@ -27,7 +27,7 @@ export const addEssayQuest = async (
   essayQuestionContent,
   modelEssayQuestionAnswer
 ) => {
-  const res = await axios.post(`http://localhost:5000/question`, {
+  const res = await axios.post(`https://smart-exam-25-back.herokuapp.com/question`, {
     type,
     model,
     essayQuestionContent,

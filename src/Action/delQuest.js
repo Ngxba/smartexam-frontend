@@ -2,7 +2,7 @@ import Axios from "axios"
 
 
 export const delQuest = async (questIDs) => {
-    const res = await Axios.post(`http://localhost:5000/question/delete`, {
+    const res = await Axios.post(`https://smart-exam-25-back.herokuapp.com/question/delete`, {
         questIDs
     })
     if (res.status === 200) {
