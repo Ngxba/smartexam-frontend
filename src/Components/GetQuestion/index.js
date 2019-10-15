@@ -31,6 +31,7 @@ class GetQuestion extends Component {
     selectedAll: false,
     type: ""
   };
+  
   toggleLoading = () => {
     this.setState({
       loading: !this.state.loading

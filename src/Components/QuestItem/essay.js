@@ -19,7 +19,7 @@ export default class Essay extends Component {
               Essay question number: {this.props.numberOfQuest}
               </h5>
               {" "}
-              {this.props.authenUser.roll === "Teacher" && <><Button
+              {this.props.authenUser.roll === "Teacher" && this.props.deleteOne && <><Button
                 outline
                 className="float-right"
                 color="danger"
