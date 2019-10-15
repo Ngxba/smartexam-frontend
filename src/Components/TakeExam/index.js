@@ -124,7 +124,7 @@ class TakeExam extends Component {
   onCountDown = () => {
     var settingTime = new Date();
     settingTime.setMinutes(settingTime.getMinutes() + 10);
-    settingTime.setSeconds(settingTime.getSeconds() + 00);
+    settingTime.setSeconds(settingTime.getSeconds() + 0);
     console.log(settingTime.getTime());
 
     //update every 1 second
