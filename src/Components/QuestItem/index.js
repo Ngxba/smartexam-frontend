@@ -37,6 +37,7 @@ class QuestItem extends Component {
             onSelect={this.props.onSelect}
             selected={this.props.selected}
             onEdit={this.onEdit}
+            deleteOne={this.props.deleteOne}
           ></Quiz>
         )}
         {this.props.data.model === "essay" && (
@@ -55,6 +56,7 @@ class QuestItem extends Component {
             onSelect={this.props.onSelect}
             selected={this.props.selected}
             onEdit={this.onEdit}
+            deleteOne={this.props.deleteOne}
           ></Essay>
         )}
                     

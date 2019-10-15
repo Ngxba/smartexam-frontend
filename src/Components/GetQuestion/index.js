@@ -184,6 +184,23 @@ class GetQuestion extends Component {
     }
   };
 
+  onDeleteOneQuest = async questID => {
+    try {
+      await delQuest([questID])
+    } catch (err) {
+      console.log(err.message)
+    }
+    this.setState({
+      selectedAll: false,
+      numberOfEssayQuest: this.state.numberOfEssayQuest.filter(
+        item => item._id !== questID
+      ),
+      numberOfQuizQuest: this.state.numberOfQuizQuest.filter(
+        item => item._id !== questID
+      )
+    });
+  }
+
   render() {
     return (
       <div>
@@ -282,6 +299,7 @@ class GetQuestion extends Component {
                           onSelect={this.onSelectOne}
                           selected={post.checked}
                           authenUser = {this.props.authenUser}
+                          deleteOne={this.onDeleteOneQuest}
                         ></QuestItem>
                       );
                     })}
@@ -300,6 +318,7 @@ class GetQuestion extends Component {
                           authenUser = {this.props.authenUser}
                           onSelect={this.onSelectOne}
                           selected={post.checked}
+                          deleteOne={this.onDeleteOneQuest}
                         ></QuestItem>
                       );
                     })}

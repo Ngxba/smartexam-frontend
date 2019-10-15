@@ -24,6 +24,7 @@ export default class Essay extends Component {
                 className="float-right"
                 color="danger"
                 style={{ marginRight: 5, borderRadius: 50 }}
+                onClick={()=>this.props.deleteOne(this.props.data._id)}
               ><i className="fas fa-trash"></i>
               </Button>
               <Button

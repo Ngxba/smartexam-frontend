@@ -34,7 +34,7 @@ class App extends React.Component {
     }
   };
   onRegister = async register_data => {
-    const response = await axios.post("http://localhost:5000/auth/register", {
+    const response = await axios.post("https://smart-exam-25-back.herokuapp.com/auth/register", {
       email: register_data.email,
       password: register_data.password,
       name: register_data.name,

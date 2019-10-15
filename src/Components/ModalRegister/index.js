@@ -135,7 +135,7 @@ class Register extends React.Component {
               />
             </FormGroup>
             <FormGroup>
-              <Label for="Roll">Roll</Label>
+              <Label for="Roll">Role</Label>
               <Input
                 name="roll"
                 type="select"
